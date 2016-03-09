@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Email Validation in Javascript</title>
+</head>
+<body>
+		<label>Email Id:</label>
+		<input type="text" name="email" id="email_txt" onchange="validEmail()" />
+		<span id="errormessage"></span>
+		
+		
+<script>
+function validEmail() 
+{
+    var reg_exp = /^[_a-z0-9]+(\.[a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
+       var email_get_val = document.getElementById('email_txt').value;
+	   //alert(email_get_val);
+    if(reg_exp.test(email_get_val) == false) 
+        {
+            document.getElementById('errormessage').innerHTML= 'Please Enter Valid Email Address';
+            document.getElementById('email_txt').value = '';
+			document.getElementById('email_txt').focus();
+			return false;
+    }
+    else{
+            document.getElementById('errormessage').innerHTML= '';
+        return true;
+    }
+}
+/*
+<label>Name:</label>
+		<input type="text" id="name_txt" onchange="validName()" />
+		<span id="errormessage1"></span>
+function validName()
+{
+	var reg_name = /[A-Za-z -']$/;
+	alert('ramma');
+	var get_name = document.getElementById('name_txt').value;
+	alert(get_name);
+	if(reg_name.test(get_name) == false)
+	{
+		document.getElementById('errormessage1).innerHTML= 'Please Fill Name';
+		document.getElementById('name_txt').value = '';
+		document.getElementById('name_txt').focus();
+		return false;	
+	}
+	else
+	{
+		document.getElementById('errormessage1').innerHTML= '';
+		return true;
+	}
+}*/
+</script>
+</body>
+</html>
